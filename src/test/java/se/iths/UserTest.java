@@ -26,6 +26,10 @@ public class UserTest {
 
         assertEquals(23.34, user.calculateBMI(), 0.01);
     }
+    
+
+
+
 
     }
 
