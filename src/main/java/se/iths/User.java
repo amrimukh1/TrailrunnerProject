@@ -50,6 +50,10 @@ public class User {
         return myRuns;
     }
 
+    public double calculateTotalDistance(){
+    
+        return 0.0;
+    }
         
     }
   

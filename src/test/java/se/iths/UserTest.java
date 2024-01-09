@@ -31,9 +31,9 @@ public class UserTest {
     public void testAddRunWithExistingID() {
         User user = new User();
 
-        Run run1 = new Run("6");
-        Run run2 = new Run("6");
-        Run run3 = new Run("9");
+        Run run1 = new Run(10,3600,"6");
+        Run run2 = new Run(10,3600,"6");
+        Run run3 = new Run(10,3600,"9");
 
 
         user.addRun(run1);
@@ -43,7 +43,43 @@ public class UserTest {
         //assertFalse(user.addRun(run2));
     }
 
-    
+    @Test 
+    public void testSaveRun(){
+        User user = new User();
+        Run run = new Run(10,3600,"1");
+
+        user.addRun(run);
+        assertTrue(user.myRuns.contains(run));
+    }
+
+    @Test 
+    public void testThreeRuns(){
+        User user = new User();
+        Run run1 = new Run(10,3600,"1");
+        Run run2 = new Run(5,1800,"2");
+        Run run3 = new Run(3,360,"3");
+
+        user.addRun(run1);
+        user.addRun(run2);
+        user.addRun(run3);
+        assertEquals(3,user.myRuns.size());
+
+    }
+
+    @Test 
+    public void testTotalDistance(){
+        User user = new User();
+        Run run1 = new Run(10,3600,"1");
+        Run run2 = new Run(5,1800,"2");
+        Run run3 = new Run(3,360,"3");
+
+        user.addRun(run1);
+        user.addRun(run2);
+        user.addRun(run3);
+        assertEquals(18, user.calculateTotalDistance());
+
+    }
+  
     }
 
 
