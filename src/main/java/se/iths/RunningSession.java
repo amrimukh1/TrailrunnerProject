@@ -1,24 +1,22 @@
 package se.iths;
 import java.time.LocalDate;
-//import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
 
-public class RunnerApp {
-    private String userid;
+
+public class RunningSession {
+    
     private double distance;
     private int hour;
     private int minute;
     private int second;
     private LocalDate date;
 
-    public RunnerApp(double distance, int hour, int minute, int second, String date){
+    public RunningSession(double distance, int hour, int minute, int second, String date){
 
          if (distance <=0 || (hour<=0 && minute <=0 && second<=0)){
         throw new IllegalArgumentException("Distance and time must be in greater than zero");
          }
 
-        this.userid = UUID.randomUUID().toString();
         this.distance = distance;  
         this.hour = hour;
         this.minute = minute;
@@ -31,10 +29,6 @@ public class RunnerApp {
         }
     }
 
-
-    public String getUserID(){
-        return userid;
-    }
 
     public double getDistance(){
         return distance;
@@ -65,6 +59,7 @@ public class RunnerApp {
         double totalTimeInMinute = hour / 60 + minute + second / 60;
         return totalTimeInMinute / distance;
     }
+
     
     
 }

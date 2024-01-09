@@ -27,10 +27,23 @@ public class UserTest {
         assertEquals(23.34, user.calculateBMI(), 0.01);
     }
     
+    @Test
+    public void testAddRunWithExistingID() {
+        User user = new User();
+
+        Run run1 = new Run("6");
+        Run run2 = new Run("6");
+        Run run3 = new Run("9");
 
 
+        user.addRun(run1);
 
+        assertThrows(IllegalArgumentException.class, () -> user.addRun(run2));
+        assertDoesNotThrow(() -> user.addRun(run3));
+        //assertFalse(user.addRun(run2));
+    }
 
+    
     }
 
 

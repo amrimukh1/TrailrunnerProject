@@ -1,8 +1,17 @@
 package se.iths;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class User {
     private double height;
     private double weight;
+
+    List<Run> myRuns; 
+
+   public User(){     //constructor
+    this.myRuns = new ArrayList<>();
+   }
 
     public void setHeight(double height){
         this.height = height;
@@ -28,5 +37,20 @@ public class User {
 
     }
     
+    public void addRun(Run run){
+        for (Run currentRun : myRuns) {
+            if (currentRun.getuserID() == run.getuserID()) {
+            throw new IllegalArgumentException("Run with ID " + run.getuserID() + " already exists.");
+            }
+        }
+        myRuns.add(run);
+    }
 
-}
+    public List<Run> getRuns() {
+        return myRuns;
+    }
+
+        
+    }
+  
+
