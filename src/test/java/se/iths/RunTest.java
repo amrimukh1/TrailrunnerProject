@@ -23,7 +23,7 @@ public class RunTest {
 
         assertEquals(10.0,run.distance,0.01);
         assertEquals(Duration.ofSeconds(3600), run.duration);
-        assertEquals( LocalDate.parse("2024-01-09"), run.date);
+        assertEquals( LocalDate.now(), run.date);
 
     }
 
