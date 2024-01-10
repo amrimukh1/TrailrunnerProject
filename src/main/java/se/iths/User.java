@@ -47,10 +47,6 @@ public class User {
         myRuns.add(run);
     }
 
-    public List<Run> getRuns() {
-        return myRuns;
-    }
-
     public double calculateTotalDistance(){
         double sum = 0.0;
 
@@ -80,7 +76,7 @@ public class User {
                 return run.toString(); 
             } 
         }
-         return "Run not found for identification number: " + id;
+        return "Run not found for identification number: " + id;
                 
         }
 
@@ -94,7 +90,7 @@ public class User {
             return 0;
         }
 
-        private void remove(Run run) {
+        public void remove(Run run) {
 
         for (Run currentRun : myRuns) {
             if (currentRun.getuserID() == run.getuserID()) {

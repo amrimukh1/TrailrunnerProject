@@ -110,8 +110,45 @@ public class UserTest {
         
         assertEquals(0, user.deleteDetailsById("1"));
     }
+
+    @Test 
+    public void testRunNotFoundForID(){
+        Run run1 = new Run(10,3600,"2024-01-10","1");
+        Run run2 = new Run(10,3600,"2024-01-10","2");
+        Run run3 = new Run(10,3600,"2024-01-10","3");
+
+        User user = new User(); 
+
+        user.addRun(run1);
+        user.addRun(run2);
+        user.addRun(run3);
+
+        
+        String result = user.printDetailsById("4");
+
+        assertEquals("Run not found for identification number: 4", result);
+
+    }
+
+
+    @Test
+    public void testRemove_RunExists() {
+        // Arrange
+        Run existingRun = new Run(10,3600,"2024-01-07","1");
+        User user = new User(); // Replace YourClassName with the actual name of your class
+        user.addRun(existingRun);
+
+        // Act & Assert
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            user.remove(existingRun);
+        });
+
+        // Assert
+        assertTrue(exception.getMessage().contains("Run with ID 1 already exists."));
+    }
   
     }
+
 
 
     

@@ -8,12 +8,6 @@ public class Run {
     Duration duration;
     LocalDate date;
 
-    
-
-    public Run(String userID){
-        this.id = userID;
-    }
-
     public Run(double distance, int duration, String date, String id){
         this.id = id;
         this.distance=distance;

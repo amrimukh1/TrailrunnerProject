@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="se.iths.UserTest" time="0.085" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="se.iths.RunTest" time="0.231" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -60,16 +60,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="testTotalDistance" classname="se.iths.UserTest" time="0.002"/>
-  <testcase name="testSetAndGetWeight" classname="se.iths.UserTest" time="0.009"/>
-  <testcase name="testRunNotFoundForID" classname="se.iths.UserTest" time="0.003"/>
-  <testcase name="testThreeRuns" classname="se.iths.UserTest" time="0.002"/>
-  <testcase name="testAverageDistance" classname="se.iths.UserTest" time="0.002"/>
-  <testcase name="testDeleteDetailsById" classname="se.iths.UserTest" time="0.002"/>
-  <testcase name="testAddRunWithExistingID" classname="se.iths.UserTest" time="0.014"/>
-  <testcase name="testprintDetailsById" classname="se.iths.UserTest" time="0.002"/>
-  <testcase name="testSaveRun" classname="se.iths.UserTest" time="0.006"/>
-  <testcase name="testRemove_RunExists" classname="se.iths.UserTest" time="0.008"/>
-  <testcase name="testSetAndGetHeight" classname="se.iths.UserTest" time="0.003"/>
-  <testcase name="testCalculateBMI" classname="se.iths.UserTest" time="0.002"/>
+  <testcase name="testPrintDetails" classname="se.iths.RunTest" time="0.146"/>
+  <testcase name="testCalculateKilometerTime" classname="se.iths.RunTest" time="0.012"/>
+  <testcase name="testCreateRunWithoutDate" classname="se.iths.RunTest" time="0.002"/>
+  <testcase name="testCreateRun" classname="se.iths.RunTest" time="0.005"/>
+  <testcase name="testCalculateAveragespeed" classname="se.iths.RunTest" time="0.003"/>
 </testsuite>
