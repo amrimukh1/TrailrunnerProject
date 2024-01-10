@@ -9,9 +9,8 @@ public class User {
 
     List<Run> myRuns; 
 
-   public User(){                     //constructor
+   public User(){                     
     this.myRuns = new ArrayList<>();
-    calculateBMI();
 
    }
 

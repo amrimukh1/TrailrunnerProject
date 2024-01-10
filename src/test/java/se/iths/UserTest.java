@@ -133,17 +133,17 @@ public class UserTest {
 
     @Test
     public void testRemove_RunExists() {
-        // Arrange
+        
         Run existingRun = new Run(10,3600,"2024-01-07","1");
-        User user = new User(); // Replace YourClassName with the actual name of your class
+        User user = new User(); 
         user.addRun(existingRun);
 
-        // Act & Assert
+        
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             user.remove(existingRun);
         });
 
-        // Assert
+    
         assertTrue(exception.getMessage().contains("Run with ID 1 already exists."));
     }
   
