@@ -1,6 +1,8 @@
 package se.iths;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.time.Duration;
 public class Run {
     String id;
@@ -8,6 +10,7 @@ public class Run {
     Duration duration;
     LocalDate date;
 
+    
 
     public Run(String userID){
         this.id = userID;
@@ -18,6 +21,7 @@ public class Run {
         this.distance=distance;
         this.duration=Duration.ofSeconds(duration);
         this.date= LocalDate.parse(date);
+
     }
 
      public Run(double distance, int duration, String id ){
@@ -48,4 +52,11 @@ public class Run {
         long km = (long) (duration.toSeconds() / distance);
         return Duration.ofSeconds(km);
     }
+
+    public String toString(){
+    
+        return String.format("Distance is " +distance + ", duration is "+duration.toSeconds() + ", date is "+date);
+
+    }
+   
 }

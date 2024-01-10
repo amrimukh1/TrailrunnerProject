@@ -1,6 +1,9 @@
 package se.iths;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 public class RunTest {
@@ -40,7 +43,15 @@ public class RunTest {
         assertEquals(Duration.ofSeconds(400), anotherRun.calculateKilometerTime());
     }
 
-    
+    @Test
+    public void testPrintDetails(){
+
+        Run run = new Run(10,3600,"2024-01-10","1");
+       
+        String expectedDetails = "Distance is 10.0, duration is 3600, date is 2024-01-10";
+        assertEquals(expectedDetails, run.toString());
+        
+    }
 
     
 }

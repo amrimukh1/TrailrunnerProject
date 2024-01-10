@@ -24,7 +24,7 @@ public class UserTest {
         user.setHeight(175.5);
         user.setWeight(71.9);
 
-        assertEquals(23.34, user.calculateBMI(), 0.01);
+        assertEquals(23.34, user.calculateBMI(),0.01);
     }
     
     @Test
@@ -77,7 +77,38 @@ public class UserTest {
         user.addRun(run2);
         user.addRun(run3);
         assertEquals(18, user.calculateTotalDistance());
+    }
 
+    @Test 
+    public void testAverageDistance(){
+        User user = new User();
+        Run run1 = new Run(10,3600,"1");
+        Run run2 = new Run(5,1800,"2");
+        Run run3 = new Run(3,360,"3");
+
+        user.addRun(run1);
+        user.addRun(run2);
+        user.addRun(run3);
+        assertEquals(6,user.calculateAverageDistance());
+    }
+     
+    @Test
+    public void testprintDetailsById() {
+        User user = new User();
+        Run run = new Run( 10,3600,"2024-01-10","1");
+
+        user.addRun(run);
+
+        String expected = "Distance is 10.0, duration is 3600, date is 2024-01-10";
+
+        assertEquals(expected, user.printDetailsById("1"));
+    }
+
+    @Test 
+    public void testDeleteDetailsById(){
+        User user = new User();
+        
+        assertEquals(0, user.deleteDetailsById("1"));
     }
   
     }
