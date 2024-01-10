@@ -1,8 +1,7 @@
 package se.iths;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
+
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;

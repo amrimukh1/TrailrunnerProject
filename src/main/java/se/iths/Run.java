@@ -1,8 +1,6 @@
 package se.iths;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 import java.time.Duration;
 public class Run {
     String id;
