@@ -14,25 +14,8 @@ pipeline {
         checkout scm
       }
     }  
-    stage('Run Robot Tests'){
-       steps{
-            script{
-           bat 'python -m robot C:/Git/RobotFramework_Lab/test.robot'
-           }
-
-       }
-        post {
-    always {
-        robot (
-            outputPath: 'C:/Git/RobotFramework_Lab/log.html',
-            passThreshold: 80.0,
-            unstable: true
-        )
-    }
-}
-
-
-    stage('Build') {
+    
+     stage('Build') {
       steps {
         bat "mvn compile"
       }
@@ -53,5 +36,22 @@ pipeline {
       }
      }
   }
- }
+  stage('Run Robot Tests'){
+       steps{
+            script{
+           bat 'python -m robot C:/Git/RobotFramework_Lab/test.robot'
+           }
+
+       }
+        post {
+    always {
+        robot (
+            outputPath: 'C:/Git/RobotFramework_Lab/log.html',
+            passThreshold: 80.0,
+            unstable: true
+                )
+            }
+            }
+        }
+        }
 }
