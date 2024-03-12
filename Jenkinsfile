@@ -14,7 +14,24 @@ pipeline {
         checkout scm
       }
     }  
-    
+    stage('Run Robot Tests'){
+       steps{
+            script{
+           bat 'python -m robot C:/Git/RobotFramework_Lab/test.robot'
+           }
+
+       }
+        post{
+
+            always{
+
+                robot outputPath: 'C:/Git/RobotFramework_Lab', passThreshold: 80.0, unstable: true
+
+            }
+        }
+
+       }
+
     stage('Build') {
       steps {
         bat "mvn compile"
