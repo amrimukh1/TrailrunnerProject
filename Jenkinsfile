@@ -5,18 +5,24 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/amrimukh1/TrailrunnerProject.git'
+        checkout([$class: 'GitSCM',
+        branches: [[name: '*/main']],
+        extensions: [[$class: 'CloneOption', timeout: 120]],
+        gitTool: 'Default', 
+        userRemoteConfigs: [[url: 'https://github.com/amrimukh1/TrailrunnerProject.git']]
+    ])
+        checkout scm
       }
     }  
     
     stage('Build') {
       steps {
-        sh "mvn compile"
+        bat "mvn compile"
       }
     }  
     stage('Test') {
       steps {
-        sh "mvn test"
+        bat "mvn test"
       }
      post {
       always {
