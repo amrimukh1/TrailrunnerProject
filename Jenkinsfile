@@ -21,16 +21,16 @@ pipeline {
            }
 
        }
-        post{
+        post {
+    always {
+        robot (
+            outputPath: 'C:/Git/RobotFramework_Lab/log.html',
+            passThreshold: 80.0,
+            unstable: true
+        )
+    }
+}
 
-            always{
-
-                robot outputPath: 'C:/Git/RobotFramework_Lab', passThreshold: 80.0, unstable: true
-
-            }
-        }
-
-       }
 
     stage('Build') {
       steps {
