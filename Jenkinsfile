@@ -46,7 +46,7 @@ pipeline {
         post {
     always {
         robot (
-            outputPath: 'C:/Git/RobotFramework_Lab/log.html',
+            outputPath: 'C:/Git/RobotFramework_Lab',
             passThreshold: 80.0,
             unstable: true
                 )
