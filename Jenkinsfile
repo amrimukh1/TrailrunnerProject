@@ -47,7 +47,7 @@ pipeline {
         post {
     always {
         robot (
-            outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita/output.xml',
+            outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita',
             passThreshold: 80.0,
             unstable: true
                 )
