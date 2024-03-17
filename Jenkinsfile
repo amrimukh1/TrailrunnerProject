@@ -40,14 +40,14 @@ pipeline {
   stage('Run Robot Tests'){
        steps{
             script{
-           bat 'python -m robot C:/Git/RobotFramework_Lab/test.robot'
+           bat 'python -m robot C:/Users/amrim/.jenkins/workspace/Amrita/Selenium/test.robot'
            }
 
        }
         post {
     always {
         robot (
-            outputPath: 'C:/Git/RobotFramework_Lab',
+            outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita/output.xml',
             passThreshold: 80.0,
             unstable: true
                 )
