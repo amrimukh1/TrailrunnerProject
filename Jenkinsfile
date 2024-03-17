@@ -6,6 +6,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
+        echo 'I am in checkout'
         checkout([$class: 'GitSCM',
         branches: [[name: '*/main']],
         extensions: [[$class: 'CloneOption', timeout: 120]],
@@ -18,11 +19,13 @@ pipeline {
     
      stage('Build') {
       steps {
+        echo 'I am in build'
         bat "mvn compile"
       }
     }  
     stage('Test') {
       steps {
+        echo 'I am in Test'
         bat "mvn test"
       }
      post {
@@ -39,6 +42,7 @@ pipeline {
   }
   stage('Run Robot Tests'){
        steps{
+          echo 'I am in cRun Robot tests'
             script{
            bat 'python -m robot C:/Users/amrim/.jenkins/workspace/Amrita/Selenium/test.robot'
            }
@@ -46,6 +50,7 @@ pipeline {
        }
         post {
     always {
+      echo 'I am in post step'
         robot (
             outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita',
             passThreshold: 80.0,
