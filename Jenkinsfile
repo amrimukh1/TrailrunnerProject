@@ -28,6 +28,7 @@ pipeline {
         echo 'I am in Test'
         bat "mvn test"
       }
+     stage('Post Test'){
      post {
       always {
         jacoco(
