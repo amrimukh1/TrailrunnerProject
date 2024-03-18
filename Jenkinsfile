@@ -53,8 +53,8 @@ pipeline {
       echo 'I am in post step'
         robot (
             outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita',
-            passThreshold: 50.0,
-           // unstable: true
+            passThreshold: 80.0,
+           onlyCrtical: false
                 )
             }
             }
