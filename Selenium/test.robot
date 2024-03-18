@@ -8,7 +8,7 @@ Suite Setup     setup
 
 
 *** Test Cases ***
-Log in with positive scenario
+Log in with positive scenario hamidtest
 
     Log in with right credentials       ${username}      ${password}
     Logout
