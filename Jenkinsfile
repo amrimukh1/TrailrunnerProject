@@ -28,7 +28,7 @@ pipeline {
         echo 'I am in Test'
         bat "mvn test"
       }
-     stage('Post Test'){
+ 
      post {
       always {
         jacoco(
@@ -40,7 +40,7 @@ pipeline {
         junit '**/TEST*.xml'
       }
      }
-  }
+  
   stage('Run Robot Tests'){
        steps{
           echo 'I am in cRun Robot tests'
