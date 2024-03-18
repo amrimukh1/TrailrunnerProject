@@ -70,6 +70,7 @@ I select continue
 I click on Book
     [Documentation]     Car booking
     [Tags]      VG_Test_Book
+    Wait Until Page Contains Element    id=bookQ7pass5
     Click Element    id=bookQ7pass5
 
 I enter my card details and click confirm
