@@ -40,6 +40,7 @@ pipeline {
         junit '**/TEST*.xml'
       }
      }
+    }
   
   stage('Run Robot Tests'){
        steps{
