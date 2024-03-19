@@ -26,8 +26,8 @@ pipeline {
                 echo 'I am in Test'
                 bat 'mvn test'
             }
-        }
-            stage('Post Test') {
+        
+            
                 post {
                     /* groovylint-disable-next-line NestedBlockDepth */
 
