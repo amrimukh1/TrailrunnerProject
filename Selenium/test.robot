@@ -62,7 +62,8 @@ Book a car on a specific date without logging in
 
 Navigate to my page to see Booking History
     Given Open the browser
-    Given Log in with right credentials      ${username}      ${password}
+    Given Log in with right credentials      hamid test
+
     When I click on MyPage
     And I can see my Bookings
     Then I can also see my bookings under Show History
