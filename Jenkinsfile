@@ -7,13 +7,15 @@ pipeline {
             steps {
                 
                 bat 'mvn compile'
-            }
+
+                  }
         }
         stage('Test') {
             steps {
                
                 bat 'mvn test'
-            }
+
+                  }
         
             
                 post {
@@ -24,7 +26,7 @@ pipeline {
                                 classPattern: 'target/classes',
                                 sourcePattern: 'src/main/java',
                                 exclusionPattern: 'src/test*'
-          )
+                              )
                         junit '**/TEST*.xml'
                     }
                 }
@@ -34,16 +36,18 @@ pipeline {
             steps {
                 
                 script {
-                    bat 'python -m robot C:/Users/amrim/.jenkins/workspace/Amrita/Selenium/test.robot'
-                }
+
+                        bat 'python -m robot C:/Users/amrim/.jenkins/workspace/Amrita/Selenium/test.robot'
+                        
+                        }
             }
             post {
                 always {
                  
                     robot(
-            outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita',
-            passThreshold: 80.0, onlyCritical: false
-                )
+                            outputPath: 'C:/Users/amrim/.jenkins/workspace/Amrita',
+                            passThreshold: 80.0, onlyCritical: false
+                        )
                 }
             }
         }
