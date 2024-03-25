@@ -134,8 +134,8 @@ Verify I can select only one model
 I select start and end date
     [Documentation]     Date selection
     [Tags]      VG_Test1_Date
-    Input Text    //input[@id='start']      2024/04/01
-    Input Text    //input[@id='end']    2024/04/01
+    Input Text    //input[@id='start']      04-01
+    Input Text    //input[@id='end']    04-03
 
 I should be able to see an alert to log in
     [Documentation]     Car booking
